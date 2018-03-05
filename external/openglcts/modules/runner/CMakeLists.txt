@@ -14,3 +14,6 @@ if (DE_OS_IS_ANDROID)
 endif ()
 
 add_library(glcts-runner STATIC ${GLCTS_RUNNER_SRCS})
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(glcts-runner ${OpenGL_LIBRARY})

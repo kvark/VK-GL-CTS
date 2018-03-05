@@ -129,3 +129,6 @@ if (DEQP_SUPPORT_VG)
 endif ()
 
 add_deqp_module(deqp-egl "${DEQP_EGL_SRCS}" "${DEQP_EGL_LIBS}" teglTestPackageEntry.cpp)
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(deqp-egl ${OpenGL_LIBRARY})

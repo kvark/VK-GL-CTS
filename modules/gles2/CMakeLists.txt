@@ -43,3 +43,6 @@ add_deqp_module(deqp-gles2 "${DEQP_GLES2_SRCS}" "${DEQP_GLES2_LIBS}" tes2TestPac
 # Data directories
 add_data_dir(deqp-gles2 ../../data/gles2/data		gles2/data)
 add_data_dir(deqp-gles2 ../../data/gles2/shaders	gles2/shaders)
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(deqp-gles2 ${OpenGL_LIBRARY})

@@ -37,3 +37,6 @@ add_deqp_module(deqp-gles31 "${DEQP_GLES31_SRCS}" "${DEQP_GLES31_LIBS}" tes31Tes
 # Data directories
 add_data_dir(deqp-gles31 ../../data/gles31/data		gles31/data)
 add_data_dir(deqp-gles31 ../../data/gles31/shaders	gles31/shaders)
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(deqp-gles31 ${OpenGL_LIBRARY})

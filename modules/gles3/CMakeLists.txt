@@ -44,3 +44,6 @@ add_deqp_module(deqp-gles3 "${DEQP_GLES3_SRCS}" "${DEQP_GLES3_LIBS}" tes3TestPac
 add_data_dir(deqp-gles3 ../../data/gles3/data								gles3/data)
 add_data_dir(deqp-gles3 ../../data/gles3/shaders							gles3/shaders)
 add_data_dir(deqp-gles3 ../../external/graphicsfuzz/data/gles3/graphicsfuzz	gles3/graphicsfuzz)
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(deqp-gles3 ${OpenGL_LIBRARY})

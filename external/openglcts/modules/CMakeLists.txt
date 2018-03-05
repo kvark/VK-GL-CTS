@@ -81,3 +81,8 @@ elseif (DE_OS_IS_ANDROID)
 	set(DEQP_MODULE_ENTRY_POINTS	${DEQP_MODULE_ENTRY_POINTS} ${CMAKE_CURRENT_SOURCE_DIR}/runner/glcAndroidMain.cpp PARENT_SCOPE)
 	set(DEQP_MODULE_LIBRARIES		${DEQP_MODULE_LIBRARIES} glcts-runner PARENT_SCOPE)
 endif ()
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(glcts ${OpenGL_LIBRARY})
+
+

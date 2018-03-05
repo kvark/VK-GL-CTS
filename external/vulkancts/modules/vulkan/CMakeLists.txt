@@ -121,3 +121,6 @@ if (DE_OS_IS_WIN32 OR DE_OS_IS_UNIX OR DE_OS_IS_OSX)
 	add_executable(vk-build-programs vktBuildPrograms.cpp)
 	target_link_libraries(vk-build-programs deqp-vk${MODULE_LIB_TARGET_POSTFIX})
 endif ()
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(deqp-vk ${OpenGL_LIBRARY})

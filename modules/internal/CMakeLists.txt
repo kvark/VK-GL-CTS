@@ -38,3 +38,6 @@ set(DE_INTERNAL_TESTS_LIBS
 add_deqp_module(de-internal-tests "${DE_INTERNAL_TESTS_SRCS}" "${DE_INTERNAL_TESTS_LIBS}" ditTestPackageEntry.cpp)
 
 add_data_dir(de-internal-tests ../../data/internal/data	internal/data)
+
+find_library(OpenGL_LIBRARY OpenGL )
+target_link_libraries(de-internal-tests ${OpenGL_LIBRARY})

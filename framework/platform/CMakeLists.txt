@@ -130,8 +130,9 @@ if (NOT DEFINED TCUTIL_PLATFORM_SRCS)
 		set(TCUTIL_PLATFORM_SRCS
 			osx/tcuOSXPlatform.cpp
 			osx/tcuOSXPlatform.hpp
+			osx/tcuOSXVulkanPlatform.hpp
+			osx/tcuOSXVulkanPlatform.cpp
 			)
-
 	else ()
 		set(TCUTIL_PLATFORM_SRCS
 			vanilla/tcuVanillaPlatform.cpp
