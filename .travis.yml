@@ -7,6 +7,10 @@ cache:
   apt: true
   ccache: true
 
+os:
+  - linux
+  - osx
+
 env:
   global:
     - MAKEFLAGS="-j4"
