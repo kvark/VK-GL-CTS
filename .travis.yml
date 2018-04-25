@@ -13,37 +13,45 @@ env:
 
 matrix:
   include:
-    - env:
-        - RECIPE="clang-64-debug"
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-3.9
-          packages:
-            - clang-3.9
+#    - env:
+#        - RECIPE="clang-64-debug"
+#      addons:
+#        apt:
+#          sources:
+#            - llvm-toolchain-trusty-3.9
+#          packages:
+#            - clang-3.9
+#
+#    - env:
+#        - RECIPE="gcc-32-debug"
+#      addons:
+#        apt:
+#          packages:
+#            - g++-multilib
+#
+#    - env:
+#        - RECIPE="gcc-64-release"
+#
+#    - env:
+#        - RECIPE="android-mustpass"
+#
+#    - env:
+#        - RECIPE="vulkan-mustpass"
+#
+#    - env:
+#        - RECIPE="gen-inl-files"
+#      addons:
+#        apt:
+#          packages:
+#            - python-lxml
+#
+    - os: osx
+      env:
+        - RECIPE="clang-64-debug-platform"
 
-    - env:
-        - RECIPE="gcc-32-debug"
-      addons:
-        apt:
-          packages:
-            - g++-multilib
-
-    - env:
-        - RECIPE="gcc-64-release"
-
-    - env:
-        - RECIPE="android-mustpass"
-
-    - env:
-        - RECIPE="vulkan-mustpass"
-
-    - env:
-        - RECIPE="gen-inl-files"
-      addons:
-        apt:
-          packages:
-            - python-lxml
+    - os: linux
+      env:
+        - RECIPE="clang-64-debug-platform"
 
 script:
   - python2 ./scripts/check_build_sanity.py -r $RECIPE
