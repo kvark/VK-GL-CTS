@@ -5256,7 +5256,7 @@ class NegativeCompileErrors : public ShaderImageLoadStoreBase
 				   "  o_color = imageLoad(g_image, ivec2(0));" NL "}"))
 			return ERROR;
 
-		if (!Compile( // no fromat layout && readonly && load
+		if (!Compile( // no format layout && readonly && load
 				NL "readonly uniform image2D g_image;" NL "void main() {" NL "  vec4 o_color;" NL
 				   "  o_color = imageLoad(g_image, ivec2(0));" NL "}"))
 			return ERROR;

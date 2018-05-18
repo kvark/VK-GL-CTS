@@ -1203,7 +1203,7 @@ bool FunctionalTest::verifyTexture(GLuint id, GLenum source_internal_format, boo
 
 /** Test given internal format and channel
  *
- * @param internal_format Internal fromat of source texture
+ * @param internal_format Internal format of source texture
  * @param is_stencil      Selects if stencil or depth channel is sampled
  *
  * @return true if results from compute and draw programs are positive, false otherwise
